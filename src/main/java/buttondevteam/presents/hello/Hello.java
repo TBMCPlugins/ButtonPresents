@@ -10,5 +10,6 @@ public class Hello extends Component{
 	public void register(JavaPlugin plugin) {
 		this.registerCommand(plugin, new HelloCommand(plugin));
 		this.registerListener(plugin, new HelloBedsplode());
+		this.registerCommand(plugin, new HelloCow());
 	}
 }
