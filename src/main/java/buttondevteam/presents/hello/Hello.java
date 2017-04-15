@@ -11,5 +11,7 @@ public class Hello extends Component{
 		this.registerCommand(plugin, new HelloCommand(plugin));
 		this.registerListener(plugin, new HelloBedsplode());
 		this.registerCommand(plugin, new HelloCow());
+		this.registerCommand(plugin, new HelloItem());
+		this.registerCommand(plugin, new HelloMagicPotato());
 	}
 }
