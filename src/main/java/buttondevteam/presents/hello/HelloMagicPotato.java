@@ -25,7 +25,7 @@ public class HelloMagicPotato extends ModCommand {
 				+ "fries and cannons of hash browns, it was unstopple.");
 		lore.add("Until one fateful day...");
 		meta.setLore(lore);
-		
+		potato.setItemMeta(meta);
 		player.getInventory().addItem(potato);
 		return true;
 	}
