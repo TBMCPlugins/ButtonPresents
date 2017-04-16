@@ -1,0 +1,7 @@
+main: buttondevteam.presents.Main
+name: ButtonPresents
+version: 0.0.1
+
+commands:
+  hello:
+    description: A set of Hello World commands and listeners, type in /hello to see subcommands
