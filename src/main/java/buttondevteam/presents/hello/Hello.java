@@ -13,5 +13,7 @@ public class Hello extends Component{
 		this.registerCommand(plugin, new HelloCow());
 		this.registerCommand(plugin, new HelloItem());
 		this.registerCommand(plugin, new HelloMagicPotato());
+		this.registerCommand(plugin, new HelloSave(plugin));
+		this.registerCommand(plugin, new HelloLoad(plugin));
 	}
 }

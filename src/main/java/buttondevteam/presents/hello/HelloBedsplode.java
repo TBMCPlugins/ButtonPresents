@@ -22,5 +22,4 @@ public class HelloBedsplode implements Listener {
 		player.sendMessage("HELLO MOTHERFUCKER!");
 		player.sendMessage("WAKEY WAKEY!");
 	}
-
 }
