@@ -1,4 +1,4 @@
-package buttondevteam.presents.hello;
+package buttondevteam.presents.hello.effects;
 
 import java.util.ArrayList;
 

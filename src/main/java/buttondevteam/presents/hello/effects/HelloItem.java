@@ -1,15 +1,17 @@
-package buttondevteam.presents.hello;
+package buttondevteam.presents.hello.effects;
 
-import org.bukkit.entity.EntityType;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 import buttondevteam.presents.architecture.commands.PlayerCommand;
 
-public class HelloCow extends PlayerCommand {
+public class HelloItem extends PlayerCommand {
 
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
-		player.getWorld().spawnEntity(player.getLocation(), EntityType.COW) ;
+		ItemStack potato = new ItemStack(Material.BAKED_POTATO);
+		player.getInventory().addItem(potato);
 		return true;
 	}
 
@@ -20,6 +22,7 @@ public class HelloCow extends PlayerCommand {
 	}
 	@Override
 	public String GetCommandPath(){
-		return "hello cow";
+		return "hello item";
 	}
+
 }
