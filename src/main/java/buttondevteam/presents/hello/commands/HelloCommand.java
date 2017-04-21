@@ -1,15 +1,10 @@
 package buttondevteam.presents.hello.commands;
 
 import org.bukkit.command.CommandSender;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import buttondevteam.presents.architecture.commands.BaseCommand;
 
 public class HelloCommand extends BaseCommand {
-	JavaPlugin plugin;
-	public HelloCommand(JavaPlugin plugin) {
-		this.plugin = plugin;
-	}
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
