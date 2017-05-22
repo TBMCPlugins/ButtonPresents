@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.lib.chat.PlayerCommandBase;
 
-@CommandClass(modOnly = false)
+@CommandClass(modOnly = false, excludeFromPath=true)
 public abstract class PlayerCommand extends PlayerCommandBase{
 	
 	public abstract boolean OnCommand(Player player, String alias, String[] args);

@@ -2,7 +2,7 @@ package buttondevteam.presents.architecture.commands;
 
 import buttondevteam.lib.chat.CommandClass;
 
-@CommandClass(modOnly = false)
+@CommandClass(modOnly = false, excludeFromPath=true)
 public abstract class UniversalCommand extends BaseCommand{
 	@Override
 	public String[] GetHelpText(String alias){

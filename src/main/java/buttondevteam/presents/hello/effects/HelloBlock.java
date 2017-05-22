@@ -4,8 +4,10 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
+import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.PlayerCommand;
 
+@CommandClass(path = "hello block")
 public class HelloBlock extends PlayerCommand {
 
 	@Override

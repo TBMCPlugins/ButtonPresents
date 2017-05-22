@@ -2,7 +2,7 @@ package buttondevteam.presents.architecture.commands;
 
 import buttondevteam.lib.chat.CommandClass;
 
-@CommandClass(modOnly = true)
+@CommandClass(modOnly = true, excludeFromPath=true)
 public abstract class ModCommand extends PlayerCommand{
 
 	@Override
