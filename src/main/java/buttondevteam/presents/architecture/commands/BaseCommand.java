@@ -8,8 +8,8 @@ import buttondevteam.lib.chat.TBMCCommandBase;
 
 public abstract class BaseCommand extends TBMCCommandBase implements CommandExecutor{
 	
+	/**replaces CommandExecutor functionality**/
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		// TODO Auto-generated method stub
 		return OnCommand(sender, label, args);
 	}
 	@Override

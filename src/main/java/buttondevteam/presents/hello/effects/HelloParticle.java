@@ -3,8 +3,10 @@ package buttondevteam.presents.hello.effects;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 
+import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.PlayerCommand;
 
+@CommandClass(path = "hello particle")
 public class HelloParticle extends PlayerCommand {
 
 	@Override

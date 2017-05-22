@@ -16,8 +16,5 @@ public class HelloBlock extends PlayerCommand {
 		
 		return false;
 	}
-	public String GetCommandPath(){
-		return "hello block";
-	}
 
 }

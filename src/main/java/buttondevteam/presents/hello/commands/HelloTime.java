@@ -6,8 +6,9 @@ import java.util.Date;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 
+import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.UniversalCommand;
-
+@CommandClass(path = "hello time")
 public class HelloTime extends UniversalCommand {
 	final String path = "hellotime.lastincident";
 
@@ -33,10 +34,6 @@ public class HelloTime extends UniversalCommand {
 		Date dateTime = new Date(time);
 		SimpleDateFormat dateformatter = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss z");
 		return dateformatter.format(dateTime);
-	}
-	
-	public String GetCommandPath(){
-		return "hello time";
 	}
 
 }

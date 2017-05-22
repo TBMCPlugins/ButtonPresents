@@ -6,8 +6,10 @@ import java.util.List;
 
 import org.bukkit.command.CommandSender;
 
+import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.UniversalCommand;
 
+@CommandClass(path = "hello load")
 public class HelloLoad extends UniversalCommand {
 
 	@Override
@@ -20,8 +22,5 @@ public class HelloLoad extends UniversalCommand {
 			sender.sendMessage(string);
 		}
 		return true;
-	}
-	public String GetCommandPath(){
-		return "hello load";
 	}
 }

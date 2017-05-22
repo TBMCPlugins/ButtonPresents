@@ -1,5 +1,8 @@
 package buttondevteam.presents.architecture.commands;
 
+import buttondevteam.lib.chat.CommandClass;
+
+@CommandClass(modOnly = true)
 public abstract class ModCommand extends PlayerCommand{
 
 	@Override
@@ -8,10 +11,5 @@ public abstract class ModCommand extends PlayerCommand{
 				"This command doesn't have help text, ask a dev to add one",
 				"If you're a dev, write the help text you lazy bastard. -Ali"
 		};
-	}
-
-	@Override
-	public boolean GetModOnly() {
-		return true;
 	}
 }

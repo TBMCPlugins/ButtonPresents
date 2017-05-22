@@ -3,8 +3,9 @@ package buttondevteam.presents.hello.effects;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
+import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.PlayerCommand;
-
+@CommandClass(path = "hello cow")
 public class HelloCow extends PlayerCommand {
 
 	@Override
@@ -14,15 +15,5 @@ public class HelloCow extends PlayerCommand {
 				EntityType.COW
 				);
 		return true;
-	}
-
-	@Override
-	public boolean GetModOnly() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-	@Override
-	public String GetCommandPath(){
-		return "hello cow";
 	}
 }

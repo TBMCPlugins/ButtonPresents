@@ -8,8 +8,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.ModCommand;
 
+@CommandClass(path = "hello magicpotato")
 public class HelloMagicPotato extends ModCommand {
 
 	@Override
@@ -30,8 +32,5 @@ public class HelloMagicPotato extends ModCommand {
 		player.getInventory().addItem(potato);
 		
 		return true;
-	}
-	public String GetCommandPath(){
-		return "hello magicpotato";
 	}
 }

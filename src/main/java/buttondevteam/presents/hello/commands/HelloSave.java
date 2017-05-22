@@ -4,8 +4,10 @@ import java.util.Arrays;
 
 import org.bukkit.command.CommandSender;
 
+import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.UniversalCommand;
 
+@CommandClass(path = "hello save")
 public class HelloSave extends UniversalCommand {
 	@Override
 	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
@@ -22,8 +24,5 @@ public class HelloSave extends UniversalCommand {
 			}
 		}
 		return false;
-	}
-	public String GetCommandPath(){
-		return "hello save";
 	}
 }

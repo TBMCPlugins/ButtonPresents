@@ -4,9 +4,11 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import buttondevteam.presents.architecture.commands.PlayerCommand;
+import buttondevteam.lib.chat.CommandClass;
+import buttondevteam.presents.architecture.commands.ModCommand;
 
-public class HelloItem extends PlayerCommand {
+@CommandClass(path = "hello item")
+public class HelloItem extends ModCommand {
 
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
@@ -15,14 +17,6 @@ public class HelloItem extends PlayerCommand {
 		return true;
 	}
 
-	@Override
-	public boolean GetModOnly() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-	@Override
-	public String GetCommandPath(){
-		return "hello item";
-	}
+
 
 }

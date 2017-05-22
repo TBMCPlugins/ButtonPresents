@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import buttondevteam.lib.TBMCCoreAPI;
 import buttondevteam.lib.chat.TBMCChatAPI;
-import buttondevteam.presents.architecture.commands.BaseCommand;
+import buttondevteam.lib.chat.TBMCCommandBase;
 
 /**
  * A Module class allows the compacting of projects into one single package. 
@@ -34,7 +34,7 @@ public abstract class Component{
 	 * @param label           Name of the command in plugin.yml
 	 * @param commandExecutor Custom coded CommandExecutor class 
 	 */
-	protected void registerCommand(JavaPlugin plugin, BaseCommand commandBase){
+	protected void registerCommand(JavaPlugin plugin, TBMCCommandBase commandBase){
 		TBMCChatAPI.AddCommand(plugin, commandBase);
 		//plugin.getCommand(commandBase.getClass().getSimpleName().toString()).setExecutor(commandBase);
 	}

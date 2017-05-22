@@ -1,30 +1,15 @@
 package buttondevteam.presents.architecture.commands;
 
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public abstract class PlayerCommand extends BaseCommand{
-	/**replaces CommandExecutor functionality*/
-	@Override
-	public boolean onCommand(CommandSender sender, Command command, String string, String[] args){
-		return OnCommand(sender, string, args);
-	}
-	/**replaces TBMCCommandBase functionality*/
-	@Override
-	public boolean OnCommand(CommandSender sender, String alias, String[] args){
-		return OnCommand((Player) sender, alias, args);
-	}
-	public abstract boolean OnCommand(Player player, String alias, String[] args);
-	@Override
-	public boolean GetPlayerOnly() {
-		return true;
-	}
+import buttondevteam.lib.chat.CommandClass;
+import buttondevteam.lib.chat.PlayerCommandBase;
 
-	@Override
-	public boolean GetModOnly() {
-		return false;
-	}
+@CommandClass(modOnly = false)
+public abstract class PlayerCommand extends PlayerCommandBase{
+	
+	public abstract boolean OnCommand(Player player, String alias, String[] args);
+	
 	@Override
 	public String[] GetHelpText(String alias){
 		return new String[] {

@@ -3,8 +3,10 @@ package buttondevteam.presents.hello.effects;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 
+import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.PlayerCommand;
 
+@CommandClass(path = "hello sound")
 public class HelloSound extends PlayerCommand{
 
 	@Override
@@ -30,9 +32,6 @@ public class HelloSound extends PlayerCommand{
 		player.getWorld().playSound(player.getLocation(), Sound.BLOCK_ANVIL_FALL, volume, pitch);
 		return false;
 		
-	}
-	public String GetCommandPath(){
-		return "hello sound";
 	}
 
 }
