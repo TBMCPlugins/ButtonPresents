@@ -9,7 +9,10 @@ public class HelloCow extends PlayerCommand {
 
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
-		player.getWorld().spawnEntity(player.getLocation(), EntityType.COW) ;
+		player.getWorld().spawnEntity(
+				player.getLocation(),
+				EntityType.COW
+				);
 		return true;
 	}
 

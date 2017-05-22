@@ -6,9 +6,9 @@ import java.util.List;
 
 import org.bukkit.command.CommandSender;
 
-import buttondevteam.presents.architecture.commands.BaseCommand;
+import buttondevteam.presents.architecture.commands.UniversalCommand;
 
-public class HelloLoad extends BaseCommand {
+public class HelloLoad extends UniversalCommand {
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
@@ -20,18 +20,6 @@ public class HelloLoad extends BaseCommand {
 			sender.sendMessage(string);
 		}
 		return true;
-	}
-
-	@Override
-	public boolean GetPlayerOnly() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean GetModOnly() {
-		// TODO Auto-generated method stub
-		return false;
 	}
 	public String GetCommandPath(){
 		return "hello load";

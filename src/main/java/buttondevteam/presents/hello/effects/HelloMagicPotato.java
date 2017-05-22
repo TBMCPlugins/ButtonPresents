@@ -24,9 +24,11 @@ public class HelloMagicPotato extends ModCommand {
 		lore.add("There was a beautiful potato that ruled a fantastic kingdom. With its armies of french"
 				+ "fries and cannons of hash browns, it was unstopple.");
 		lore.add("Until one fateful day...");
+		
 		meta.setLore(lore);
 		potato.setItemMeta(meta);
 		player.getInventory().addItem(potato);
+		
 		return true;
 	}
 	public String GetCommandPath(){

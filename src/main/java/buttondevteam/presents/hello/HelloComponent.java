@@ -15,7 +15,7 @@ import buttondevteam.presents.hello.effects.HelloMagicPotato;
 import buttondevteam.presents.hello.effects.HelloParticle;
 import buttondevteam.presents.hello.effects.HelloSound;
 
-public class Hello extends Component{
+public class HelloComponent extends Component{
 
 	@Override
 	public void register(JavaPlugin plugin) {

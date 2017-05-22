@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 import org.bukkit.command.CommandSender;
 
-import buttondevteam.presents.architecture.commands.BaseCommand;
+import buttondevteam.presents.architecture.commands.UniversalCommand;
 
-public class HelloSave extends BaseCommand {
+public class HelloSave extends UniversalCommand {
 	@Override
 	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
 		if (args.length < 1){
@@ -21,18 +21,6 @@ public class HelloSave extends BaseCommand {
 				sender.sendMessage(e.toString());
 			}
 		}
-		return false;
-	}
-
-	@Override
-	public boolean GetPlayerOnly() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean GetModOnly() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	public String GetCommandPath(){

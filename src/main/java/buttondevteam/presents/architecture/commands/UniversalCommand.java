@@ -1,6 +1,6 @@
 package buttondevteam.presents.architecture.commands;
 
-public abstract class CommandBlockCommand extends BaseCommand{
+public abstract class UniversalCommand extends BaseCommand{
 	@Override
 	public String[] GetHelpText(String alias){
 		return new String[] {
