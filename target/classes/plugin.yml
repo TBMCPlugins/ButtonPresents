@@ -5,3 +5,5 @@ version: 0.0.1
 commands:
   hello:
     description: A set of Hello World commands and listeners, type in /hello to see subcommands
+  rtp:
+    description: A command that allows players to randomly teleport across the map
