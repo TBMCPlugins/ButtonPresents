@@ -9,15 +9,15 @@ public class HelloBedsplode implements Listener {
 	@EventHandler
 	public void onSleep(PlayerBedEnterEvent event){
 		Player player = event.getPlayer();
-		if (player.getName() != "alisolarflare") return;
+		if (player.getName().toLowerCase() != "alisolarflare") return;
 		
 		player.getWorld().createExplosion(
 				player.getLocation().getBlockX(),
 				player.getLocation().getBlockY(),
 				player.getLocation().getBlockZ(),
-				4,
-				false, 
-				false);
+				4,      //power
+				false,  //setfire
+				false); //breakblocks
 		
 		player.sendMessage("HELLO MOTHERFUCKER!");
 		player.sendMessage("WAKEY WAKEY!");
