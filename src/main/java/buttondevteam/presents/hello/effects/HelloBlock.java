@@ -16,7 +16,7 @@ public class HelloBlock extends PlayerCommand {
 		
 		blockAtPlayer.setType(Material.CAKE_BLOCK);
 		
-		return false;
+		return true;
 	}
 
 }

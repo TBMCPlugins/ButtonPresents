@@ -11,6 +11,6 @@ public class HelloCommand extends UniversalCommand {
 	@Override
 	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
 		sender.sendMessage("Hello World!");
-		return false;
+		return true;
 	}
 }

@@ -29,8 +29,8 @@ public class HelloSound extends PlayerCommand{
 			}
 			
 		}
-		player.getWorld().playSound(player.getLocation(), Sound.BLOCK_ANVIL_FALL, volume, pitch);
-		return false;
+		player.getWorld().playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, volume, pitch);
+		return true;
 		
 	}
 

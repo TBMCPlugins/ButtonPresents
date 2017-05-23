@@ -19,12 +19,15 @@ public class HelloMagicPotato extends ModCommand {
 		ItemStack potato = new ItemStack(Material.BAKED_POTATO);
 		ItemMeta meta = potato.getItemMeta();
 		
-		potato.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
+		meta.addEnchant(Enchantment.DURABILITY, 10, true);
 		
 		ArrayList<String> lore = new ArrayList<String>();
 		lore.add("Once upon a time");
-		lore.add("There was a beautiful potato that ruled a fantastic kingdom. With its armies of french"
-				+ "fries and cannons of hash browns, it was unstopple.");
+		lore.add("There was a beautiful potato");
+		lore.add("that ruled a fantastic kingdom.");
+		lore.add("With its armies of french fries");
+		lore.add("and cannons of hash browns,");
+		lore.add("it was unstopple.");
 		lore.add("Until one fateful day...");
 		
 		meta.setLore(lore);

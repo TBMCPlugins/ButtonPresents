@@ -12,7 +12,7 @@ public class HelloParticle extends PlayerCommand {
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
 		player.getWorld().spawnParticle(Particle.CLOUD, player.getLocation(), 10);
-		return false;
+		return true;
 	}
 
 }

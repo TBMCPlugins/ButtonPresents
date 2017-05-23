@@ -23,6 +23,6 @@ public class HelloSave extends UniversalCommand {
 				sender.sendMessage(e.toString());
 			}
 		}
-		return false;
+		return true;
 	}
 }
