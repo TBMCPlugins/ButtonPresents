@@ -29,7 +29,7 @@ public class HelloSound extends PlayerCommand{
 			}
 			
 		}
-		player.getWorld().playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, volume, pitch);
+		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_BLAZE_DEATH, volume, pitch);
 		return true;
 		
 	}
