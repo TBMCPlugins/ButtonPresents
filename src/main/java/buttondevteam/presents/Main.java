@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import buttondevteam.presents.hello.HelloComponent;
 import buttondevteam.presents.rtp.RandomTeleportComponent;
+import buttondevteam.presents.servlet.ServletComponent;
 
 public class Main extends JavaPlugin{
 	public void onEnable(){
@@ -17,6 +18,7 @@ PluginDescriptionFile pdfFile = getDescription();
 		
 		new HelloComponent().register(this);
 		new RandomTeleportComponent().register(this);
+		new ServletComponent().register(this);
 		
 		logger.info(pdfFile.getName() + " has fully registered (V." + pdfFile.getVersion()+ ").");
 	}
