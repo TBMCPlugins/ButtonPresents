@@ -1,18 +1,20 @@
 package buttondevteam.presents.servlet;
 
-import buttondevteam.presents.architecture.serverlets.WebPage;
+import com.sun.net.httpserver.HttpExchange;
 
-public class AliHelloPage extends WebPage {
+import buttondevteam.website.io.Response;
+import buttondevteam.website.page.Page;
+
+public class AliHelloPage extends Page {
 
 	@Override
 	public String GetName() {
-		// TODO Auto-generated method stub
-		return "AliHello";
+		return "ali";
 	}
 
 	@Override
-	public String GetData(){
-		return "HELLO WORLD";
+	public Response handlePage(HttpExchange exchange) {
+		return new Response(200, "Hello World! -Ali", exchange);
 	}
 
 }

@@ -10,7 +10,6 @@ public class ServletComponent extends Component {
 	@Override
 	public void register(JavaPlugin plugin) {
 		ButtonWebsiteModule.addPage(new AliHelloPage());
-			
 
 	}
 
