@@ -7,7 +7,7 @@ public class AliHelloPage extends WebPage {
 	@Override
 	public String GetName() {
 		// TODO Auto-generated method stub
-		return "Ali/Hello/";
+		return "AliHello";
 	}
 
 	@Override
