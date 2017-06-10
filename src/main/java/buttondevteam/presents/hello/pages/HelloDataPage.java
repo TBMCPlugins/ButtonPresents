@@ -15,10 +15,7 @@ public class HelloDataPage extends Page{
 
 	@Override
 	public Response handlePage(HttpExchange exchange) {
-		String responseString = 
-			"<h1>Come check out this data!</h1>"
-			+ "<p>" + data + "</p>"
-			+ "<p>This is not suspicious shit at all</p>";
+		String responseString = String.valueOf(data);
 		
 		return new Response(200, responseString, exchange);
 	}
