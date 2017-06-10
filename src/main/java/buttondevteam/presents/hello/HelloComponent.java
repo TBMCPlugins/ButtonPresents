@@ -14,6 +14,8 @@ import buttondevteam.presents.hello.effects.HelloItem;
 import buttondevteam.presents.hello.effects.HelloMagicPotato;
 import buttondevteam.presents.hello.effects.HelloParticle;
 import buttondevteam.presents.hello.effects.HelloSound;
+import buttondevteam.presents.hello.pages.HelloDataPage;
+import buttondevteam.presents.hello.pages.HelloWorldPage;
 
 public class HelloComponent extends Component{
 
@@ -30,5 +32,8 @@ public class HelloComponent extends Component{
 		this.registerCommand(plugin, new HelloBlock());
 		this.registerCommand(plugin, new HelloParticle());
 		this.registerCommand(plugin, new HelloSound());
+		
+		this.addPage(plugin, new HelloWorldPage());
+		this.addPage(plugin, new HelloDataPage());
 	}
 }

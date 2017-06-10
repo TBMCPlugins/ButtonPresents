@@ -1,15 +1,15 @@
-package buttondevteam.presents.servlet;
+package buttondevteam.presents.hello.pages;
 
 import com.sun.net.httpserver.HttpExchange;
 
 import buttondevteam.website.io.Response;
 import buttondevteam.website.page.Page;
 
-public class AliHelloPage extends Page {
+public class HelloWorldPage extends Page {
 
 	@Override
 	public String GetName() {
-		return "ali";
+		return "ali/hello/world";
 	}
 
 	@Override

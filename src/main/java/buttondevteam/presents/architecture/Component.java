@@ -7,6 +7,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import buttondevteam.lib.TBMCCoreAPI;
 import buttondevteam.lib.chat.TBMCChatAPI;
 import buttondevteam.lib.chat.TBMCCommandBase;
+import buttondevteam.website.ButtonWebsiteModule;
+import buttondevteam.website.page.Page;
 
 /**
  * A Module class allows the compacting of projects into one single package. 
@@ -47,6 +49,10 @@ public abstract class Component{
 	protected Listener registerListener(JavaPlugin plugin, Listener listener){
 		TBMCCoreAPI.RegisterEventsForExceptions(listener, plugin);
 		return listener;
+	}
+	protected Page addPage(JavaPlugin plugin, Page page){
+		ButtonWebsiteModule.addPage(page);
+		return page;
 	}
 
 	public void saveData(FileConfiguration config, String pathToData, Object data){
