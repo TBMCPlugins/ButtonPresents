@@ -23,9 +23,9 @@ public class HelloPlayersPage extends Page{
 
 	@Override
 	public Response handlePage(HttpExchange exchange) {
-		String playerList = "";
+		String playerList = "Players Online: "+ plugin.getServer().getOnlinePlayers().size() +"<br />";
 		for(Player player : plugin.getServer().getOnlinePlayers()){
-			playerList += player.getPlayerListName() + "<br>";
+			playerList += player.getPlayerListName() + "<br />";
 		}
 		return new Response(200, playerList, exchange);
 	}
