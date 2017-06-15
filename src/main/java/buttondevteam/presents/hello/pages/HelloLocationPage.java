@@ -25,12 +25,20 @@ public class HelloLocationPage extends Page{
 	public Response handlePage(HttpExchange exchange) {
 		//Returns the location of all players in table form
 		String responseString = "<table>";
+		
+		responseString += "<tr><th>Player</th><th>Location</th></tr>";
 		for(Player player : plugin.getServer().getOnlinePlayers()){
+			//Creates new row: Player Name|Location
 			Location loc = player.getLocation();
 			responseString += "<tr>";
+			responseString += "<td>";
+			responseString += player.getPlayerListName();
+			responseString += "</td>";
+			responseString += "<td>";
 			responseString += loc.getBlockX() + " ";
 			responseString += loc.getBlockY() + " ";
 			responseString += loc.getBlockZ() + " ";
+			responseString += "</td>";
 			responseString += "</tr>";
 		}
 		responseString += "</table>";
