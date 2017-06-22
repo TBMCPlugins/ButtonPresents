@@ -6,6 +6,7 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import buttondevteam.presents.hello.HelloComponent;
+import buttondevteam.presents.metrics.MetricsComponent;
 import buttondevteam.presents.rtp.RandomTeleportComponent;
 
 public class Main extends JavaPlugin{
@@ -17,6 +18,7 @@ PluginDescriptionFile pdfFile = getDescription();
 		
 		new HelloComponent().register(this);
 		new RandomTeleportComponent().register(this);
+		new MetricsComponent().register(this);
 		
 		logger.info(pdfFile.getName() + " has fully registered (V." + pdfFile.getVersion()+ ").");
 	}
