@@ -4,8 +4,6 @@ import javax.json.Json;
 import javax.json.JsonBuilderFactory;
 import javax.json.JsonObject;
 
-import org.bukkit.plugin.java.JavaPlugin;
-
 import com.sun.net.httpserver.HttpExchange;
 
 import buttondevteam.website.io.Response;
