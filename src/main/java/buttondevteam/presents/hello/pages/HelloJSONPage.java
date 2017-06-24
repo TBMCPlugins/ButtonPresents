@@ -18,20 +18,16 @@ public class HelloJSONPage extends Page {
 	public Response handlePage(HttpExchange exchange) {
 		return new Response(200, getResponseString(), exchange);
 	}
-
+    class output{
+		String ali = "pls";
+    	String iie = "whaddap";
+    	String norbipeti = "¯\\_(ツ)_/¯";
+    }
 	private String getResponseString() {
-
-    	@SuppressWarnings("unused")
-        class output{
-			String ali = "pls";
-        	String iie = "whaddap";
-        	String norbipeti = "¯\\_(ツ)_/¯";
-        }
-    	
     	GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
-        
 		return gson.toJson(new output());
 	}
+
 
 }

@@ -15,12 +15,7 @@ public class HelloJSON extends ModCommand{
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
 
-    	@SuppressWarnings("unused")
-        class output{
-			String ali = "pls";
-        	String iie = "whaddap";
-        	String norbipeti = "¯\\_(ツ)_/¯";
-        }
+
     	
     	GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
@@ -28,5 +23,10 @@ public class HelloJSON extends ModCommand{
 		player.sendMessage(gson.toJson(new output()));
 		return true;
 	}
+    class output{
+		String ali = "pls";
+    	String iie = "whaddap";
+    	String norbipeti = "¯\\_(ツ)_/¯";
+    }
 
 }
