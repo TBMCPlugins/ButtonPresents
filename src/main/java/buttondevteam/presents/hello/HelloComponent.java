@@ -15,6 +15,7 @@ import buttondevteam.presents.hello.effects.HelloMagicPotato;
 import buttondevteam.presents.hello.effects.HelloParticle;
 import buttondevteam.presents.hello.effects.HelloSound;
 import buttondevteam.presents.hello.pages.HelloDataPage;
+import buttondevteam.presents.hello.pages.HelloJSONPage;
 import buttondevteam.presents.hello.pages.HelloLocationPage;
 import buttondevteam.presents.hello.pages.HelloPOSTPage;
 import buttondevteam.presents.hello.pages.HelloPlayersPage;
@@ -41,5 +42,6 @@ public class HelloComponent extends Component{
 		this.addPage(plugin, new HelloPlayersPage(plugin));
 		this.addPage(plugin, new HelloLocationPage(plugin));
 		this.addPage(plugin, new HelloPOSTPage(plugin));
+		this.addPage(plugin, new HelloJSONPage());
 	}
 }
