@@ -9,7 +9,7 @@ public class MetricsComponent extends Component{
 	@Override
 	public void register(JavaPlugin plugin) {
 		registerListener(plugin, new PlayerLogins(plugin));
-		addPage(plugin, new PlayerLoginsPage(plugin));
+		addPage(plugin, new PlayerLoginsPage());
 	}
 	
 }

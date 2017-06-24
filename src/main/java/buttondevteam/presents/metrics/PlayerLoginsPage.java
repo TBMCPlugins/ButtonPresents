@@ -1,7 +1,5 @@
 package buttondevteam.presents.metrics;
 
-import org.bukkit.plugin.java.JavaPlugin;
-
 import com.sun.net.httpserver.HttpExchange;
 
 import buttondevteam.website.io.Response;
@@ -9,11 +7,7 @@ import buttondevteam.website.page.Page;
 
 public class PlayerLoginsPage extends Page {
 
-	private JavaPlugin plugin;
 
-	public PlayerLoginsPage(JavaPlugin plugin) {
-		this.plugin = plugin;
-	}
 
 	@Override
 	public String GetName() {

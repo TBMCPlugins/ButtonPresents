@@ -1,19 +1,24 @@
 package buttondevteam.presents;
 
-import javax.json.Json;
-import javax.json.JsonBuilderFactory;
-import javax.json.JsonObject;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class StaticMain {
 	public static void main(String[] args){
 
-		JsonBuilderFactory factory = Json.createBuilderFactory(null);
-		JsonObject value = factory.createObjectBuilder()
-				.add("Ali", "pls")
-				.add("iie", "whaddap")
-				.add("norbi", "nice")
-				.build();
+
+        
+
+    	@SuppressWarnings("unused")
+        class output{
+			String ali = "pls";
+        	String iie = "whaddap";
+        	String norbipeti = "¯\\_(ツ)_/¯";
+        }
 		
-		System.out.println(value.toString());
+    	GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+        
+		System.out.println(gson.toJson(new output()));
 	}
 }

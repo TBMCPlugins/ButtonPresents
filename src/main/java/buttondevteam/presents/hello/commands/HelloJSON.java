@@ -1,10 +1,10 @@
 package buttondevteam.presents.hello.commands;
 
-import javax.json.Json;
-import javax.json.JsonBuilderFactory;
-import javax.json.JsonObject;
 
 import org.bukkit.entity.Player;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.ModCommand;
@@ -15,14 +15,17 @@ public class HelloJSON extends ModCommand{
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
 
-		JsonBuilderFactory factory = Json.createBuilderFactory(null);
-		JsonObject value = factory.createObjectBuilder()
-				.add("Ali", "pls")
-				.add("iie", "whaddap")
-				.add("norbi", "nice")
-				.build();
-		
-		player.sendMessage(value.toString());
+    	@SuppressWarnings("unused")
+        class output{
+			String ali = "pls";
+        	String iie = "whaddap";
+        	String norbipeti = "¯\\_(ツ)_/¯";
+        }
+    	
+    	GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+        
+		player.sendMessage(gson.toJson(new output()));
 		return true;
 	}
 

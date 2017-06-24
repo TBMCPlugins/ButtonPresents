@@ -1,9 +1,7 @@
 package buttondevteam.presents.hello.pages;
 
-import javax.json.Json;
-import javax.json.JsonBuilderFactory;
-import javax.json.JsonObject;
-
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.sun.net.httpserver.HttpExchange;
 
 import buttondevteam.website.io.Response;
@@ -22,14 +20,18 @@ public class HelloJSONPage extends Page {
 	}
 
 	private String getResponseString() {
-		JsonBuilderFactory factory = Json.createBuilderFactory(null);
-		JsonObject value = factory.createObjectBuilder()
-				.add("Ali", "pls")
-				.add("iie", "whaddap")
-				.add("norbi", "nice")
-				.build();
-		
-		return value.toString();
+
+    	@SuppressWarnings("unused")
+        class output{
+			String ali = "pls";
+        	String iie = "whaddap";
+        	String norbipeti = "¯\\_(ツ)_/¯";
+        }
+    	
+    	GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+        
+		return gson.toJson(new output());
 	}
 
 }
