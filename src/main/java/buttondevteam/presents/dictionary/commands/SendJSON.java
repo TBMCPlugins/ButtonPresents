@@ -1,4 +1,4 @@
-package buttondevteam.presents.hello.commands;
+package buttondevteam.presents.dictionary.commands;
 
 
 import org.bukkit.entity.Player;
@@ -9,8 +9,8 @@ import com.google.gson.GsonBuilder;
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.ModCommand;
 
-@CommandClass(modOnly = true, path="hello json")
-public class HelloJSON extends ModCommand{
+@CommandClass(modOnly = true, path="dictionary json")
+public class SendJSON extends ModCommand{
 
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {

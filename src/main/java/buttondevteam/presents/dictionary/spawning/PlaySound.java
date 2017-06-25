@@ -1,4 +1,4 @@
-package buttondevteam.presents.hello.effects;
+package buttondevteam.presents.dictionary.spawning;
 
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -6,8 +6,8 @@ import org.bukkit.entity.Player;
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.PlayerCommand;
 
-@CommandClass(path = "hello sound")
-public class HelloSound extends PlayerCommand{
+@CommandClass(path = "dictionary sound")
+public class PlaySound extends PlayerCommand{
 
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {

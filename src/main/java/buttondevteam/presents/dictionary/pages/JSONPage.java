@@ -1,4 +1,4 @@
-package buttondevteam.presents.hello.pages;
+package buttondevteam.presents.dictionary.pages;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -7,7 +7,7 @@ import com.sun.net.httpserver.HttpExchange;
 import buttondevteam.website.io.Response;
 import buttondevteam.website.page.Page;
 
-public class HelloJSONPage extends Page {
+public class JSONPage extends Page {
 
 	@Override
 	public String GetName() {

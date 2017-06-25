@@ -1,4 +1,4 @@
-package buttondevteam.presents.hello.commands;
+package buttondevteam.presents.dictionary.config;
 
 import java.util.Arrays;
 
@@ -7,8 +7,8 @@ import org.bukkit.command.CommandSender;
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.UniversalCommand;
 
-@CommandClass(path = "hello save")
-public class HelloSave extends UniversalCommand {
+@CommandClass(path = "dictionary save")
+public class SaveConfig extends UniversalCommand {
 	@Override
 	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
 		if (args.length < 1){

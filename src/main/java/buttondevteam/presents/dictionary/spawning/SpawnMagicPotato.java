@@ -1,4 +1,4 @@
-package buttondevteam.presents.hello.effects;
+package buttondevteam.presents.dictionary.spawning;
 
 import java.util.ArrayList;
 
@@ -11,8 +11,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.ModCommand;
 
-@CommandClass(path = "hello magicpotato")
-public class HelloMagicPotato extends ModCommand {
+@CommandClass(path = "dictionary magicpotato")
+public class SpawnMagicPotato extends ModCommand {
 
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {

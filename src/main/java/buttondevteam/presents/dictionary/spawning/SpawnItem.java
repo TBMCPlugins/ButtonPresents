@@ -1,4 +1,4 @@
-package buttondevteam.presents.hello.effects;
+package buttondevteam.presents.dictionary.spawning;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -7,8 +7,8 @@ import org.bukkit.inventory.ItemStack;
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.ModCommand;
 
-@CommandClass(path = "hello item")
-public class HelloItem extends ModCommand {
+@CommandClass(path = "dictionary item")
+public class SpawnItem extends ModCommand {
 
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {

@@ -1,4 +1,4 @@
-package buttondevteam.presents.hello.commands;
+package buttondevteam.presents.dictionary.config;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,8 +8,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.UniversalCommand;
-@CommandClass(path = "hello time")
-public class HelloTime extends UniversalCommand {
+@CommandClass(path = "dictionary time")
+public class TimePersistence extends UniversalCommand {
 	final String path = "hellotime.lastincident";
 
 	@Override

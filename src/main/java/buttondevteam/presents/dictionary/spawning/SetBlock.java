@@ -1,4 +1,4 @@
-package buttondevteam.presents.hello.effects;
+package buttondevteam.presents.dictionary.spawning;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -7,8 +7,8 @@ import org.bukkit.entity.Player;
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.PlayerCommand;
 
-@CommandClass(path = "hello block")
-public class HelloBlock extends PlayerCommand {
+@CommandClass(path = "dictionary block")
+public class SetBlock extends PlayerCommand {
 
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {

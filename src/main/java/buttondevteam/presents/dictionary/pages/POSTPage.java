@@ -1,4 +1,4 @@
-package buttondevteam.presents.hello.pages;
+package buttondevteam.presents.dictionary.pages;
 
 import java.io.IOException;
 
@@ -9,10 +9,10 @@ import com.sun.net.httpserver.HttpExchange;
 import buttondevteam.website.io.Response;
 import buttondevteam.website.page.Page;
 
-public class HelloPOSTPage extends Page {
+public class POSTPage extends Page {
 	JavaPlugin plugin;
 	String saveFilePath = "hello.pages.hellopostpage.saved";
-	public HelloPOSTPage(JavaPlugin plugin) {
+	public POSTPage(JavaPlugin plugin) {
 		this.plugin = plugin;
 	}
 

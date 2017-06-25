@@ -1,12 +1,12 @@
-package buttondevteam.presents.hello.effects;
+package buttondevteam.presents.dictionary.spawning;
 
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.PlayerCommand;
-@CommandClass(path = "hello cow")
-public class HelloCow extends PlayerCommand {
+@CommandClass(path = "dictionary cow")
+public class SpawnCow extends PlayerCommand {
 
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {

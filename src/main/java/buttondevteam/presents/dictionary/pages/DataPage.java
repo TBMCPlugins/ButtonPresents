@@ -1,11 +1,11 @@
-package buttondevteam.presents.hello.pages;
+package buttondevteam.presents.dictionary.pages;
 
 import com.sun.net.httpserver.HttpExchange;
 
 import buttondevteam.website.io.Response;
 import buttondevteam.website.page.Page;
 
-public class HelloDataPage extends Page{
+public class DataPage extends Page{
 	private final int data = 1234561;
 
 	@Override

@@ -1,11 +1,11 @@
-package buttondevteam.presents.hello.pages;
+package buttondevteam.presents.dictionary.pages;
 
 import com.sun.net.httpserver.HttpExchange;
 
 import buttondevteam.website.io.Response;
 import buttondevteam.website.page.Page;
 
-public class HelloWorldPage extends Page {
+public class HelloPage extends Page {
 
 	@Override
 	public String GetName() {

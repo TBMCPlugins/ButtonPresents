@@ -1,4 +1,4 @@
-package buttondevteam.presents.hello.pages;
+package buttondevteam.presents.dictionary.pages;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -9,10 +9,10 @@ import com.sun.net.httpserver.HttpExchange;
 import buttondevteam.website.io.Response;
 import buttondevteam.website.page.Page;
 
-public class HelloLocationPage extends Page{
+public class LocationPage extends Page{
 	JavaPlugin plugin;
 	
-	public HelloLocationPage(JavaPlugin plugin){
+	public LocationPage(JavaPlugin plugin){
 		this.plugin = plugin;
 	}
 	@Override

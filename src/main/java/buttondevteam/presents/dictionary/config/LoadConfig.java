@@ -1,4 +1,4 @@
-package buttondevteam.presents.hello.commands;
+package buttondevteam.presents.dictionary.config;
 
 
 
@@ -9,8 +9,8 @@ import org.bukkit.command.CommandSender;
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.UniversalCommand;
 
-@CommandClass(path = "hello load")
-public class HelloLoad extends UniversalCommand {
+@CommandClass(path = "dictionary load")
+public class LoadConfig extends UniversalCommand {
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
