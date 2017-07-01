@@ -4,22 +4,22 @@ package buttondevteam.presents.dictionary.config;
 
 import java.util.List;
 
-import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 import buttondevteam.lib.chat.CommandClass;
-import buttondevteam.presents.architecture.commands.UniversalCommand;
+import buttondevteam.presents.architecture.commands.ModCommand;
 
-@CommandClass(path = "dictionary load")
-public class LoadConfig extends UniversalCommand {
+@CommandClass(modOnly=true, path = "dictionary load")
+public class LoadConfig extends ModCommand {
 
 	@Override
-	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
+	public boolean OnCommand(Player player, String alias, String[] args) {
 		if (args.length > 1 && args[0].toLowerCase().contains("debug")){
-			sender.sendMessage("Data Type: " + this.getPlugin().getConfig().get("hellosave").getClass().toString());
+			player.sendMessage("Data Type: " + this.getPlugin().getConfig().get("hellosave").getClass().toString());
 		}
 		List<String> mylist = this.getPlugin().getConfig().getStringList("hellosave");
 		for(String string : mylist){
-			sender.sendMessage(string);
+			player.sendMessage(string);
 		}
 		return true;
 	}
