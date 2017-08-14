@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.UniversalCommand;
 
-@CommandClass(modOnly = false)
+@CommandClass(modOnly = false, path="spawn choosecolor")
 public class ChooseColor extends UniversalCommand {
 
 	@Override
