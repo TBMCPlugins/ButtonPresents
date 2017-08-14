@@ -9,7 +9,7 @@ public class Bedsplode implements Listener {
 	@EventHandler
 	public void onSleep(PlayerBedEnterEvent event){
 		Player player = event.getPlayer();
-		player.sendMessage("[ButtonPresents] Night night " + player.getName().toLowerCase());
+		player.sendMessage("[ButtonPresents] Nighty night " + player.getName().toLowerCase());
 		if (player.getName().toLowerCase() != "alisolarflare") return;
 		
 		player.getWorld().createExplosion(
