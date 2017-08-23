@@ -7,7 +7,7 @@ import org.bukkit.inventory.ItemStack;
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.ModCommand;
 
-@CommandClass(path = "dictionary item")
+@CommandClass(path = "dictionary item", modOnly=true)
 public class SpawnItem extends ModCommand {
 
 	@Override

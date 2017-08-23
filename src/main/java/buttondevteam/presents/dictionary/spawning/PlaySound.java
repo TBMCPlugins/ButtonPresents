@@ -13,13 +13,16 @@ public class PlaySound extends PlayerCommand{
 	public boolean OnCommand(Player player, String alias, String[] args) {
 		int volume = 0;
 		int pitch = 0;
+		
+		//parse arguments
 		if (args.length >= 2){
 			try{
 				volume = Integer.parseInt(args[0]);
 				pitch = Integer.parseInt(args[1]);
 			}catch(NumberFormatException e){
-				volume = 0;
-				pitch = 0;
+				
+				volume = pitch = 0;
+				
 				player.sendMessage("Incorrect input:");
 				player.sendMessage(args[0] + " must be an int.");
 				player.sendMessage(args[1] + " must be an int.");
@@ -29,7 +32,13 @@ public class PlaySound extends PlayerCommand{
 			}
 			
 		}
-		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_BLAZE_DEATH, volume, pitch);
+		
+		player.playSound(
+				player.getLocation(),
+				Sound.ENTITY_BLAZE_DEATH,
+				volume,  //Volume
+				pitch); //Pitch
+		
 		return true;
 		
 	}

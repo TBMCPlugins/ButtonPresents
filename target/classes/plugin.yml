@@ -9,3 +9,5 @@ commands:
     description: A command that allows players to randomly teleport across the map
   spawn:
     description: A set of commands designed to be used in spawn
+  magic:
+    description: A set of fun commands designed for cheaty stuff

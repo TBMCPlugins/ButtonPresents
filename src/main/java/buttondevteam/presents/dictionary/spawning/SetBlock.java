@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.PlayerCommand;
 
-@CommandClass(path = "dictionary block")
+@CommandClass(path = "dictionary block", modOnly=true)
 public class SetBlock extends PlayerCommand {
 
 	@Override

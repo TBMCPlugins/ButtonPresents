@@ -11,7 +11,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.ModCommand;
 
-@CommandClass(path = "dictionary magicpotato")
+@CommandClass(path = "dictionary magicpotato", modOnly=true)
 public class SpawnMagicPotato extends ModCommand {
 
 	@Override

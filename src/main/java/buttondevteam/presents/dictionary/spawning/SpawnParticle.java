@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.architecture.commands.PlayerCommand;
 
-@CommandClass(path = "dictionary particle")
+@CommandClass(path = "dictionary particle", modOnly=true)
 public class SpawnParticle extends PlayerCommand {
 
 	@Override

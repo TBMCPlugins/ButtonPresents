@@ -14,9 +14,6 @@ public class SendJSON extends ModCommand{
 
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
-
-
-    	
     	GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         
