@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import buttondevteam.presents.components.dictionary.DictionaryComponent;
 import buttondevteam.presents.components.magic.MagicComponent;
+import buttondevteam.presents.components.research.ResearchComponent;
 import buttondevteam.presents.components.spawn.SpawnComponent;
 
 public class Main extends JavaPlugin{
@@ -19,6 +20,7 @@ public class Main extends JavaPlugin{
 		new DictionaryComponent().register(this);
 		new SpawnComponent().register(this);
 		new MagicComponent().register(this);
+		new ResearchComponent().register(this);
 		
 		logger.info(pdfFile.getName() + " has fully registered (V." + pdfFile.getVersion()+ ").");
 	}
