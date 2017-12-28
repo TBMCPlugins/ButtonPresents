@@ -5,9 +5,9 @@ import java.util.logging.Logger;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import buttondevteam.presents.dictionary.DictionaryComponent;
-import buttondevteam.presents.magic.MagicComponent;
-import buttondevteam.presents.spawn.SpawnComponent;
+import buttondevteam.presents.components.dictionary.DictionaryComponent;
+import buttondevteam.presents.components.magic.MagicComponent;
+import buttondevteam.presents.components.spawn.SpawnComponent;
 
 public class Main extends JavaPlugin{
 	public void onEnable(){
