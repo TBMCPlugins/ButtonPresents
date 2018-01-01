@@ -11,7 +11,7 @@ public class OverwhelmCrash extends Question {
 	@Override
 	public String question() {
 		// TODO Auto-generated method stub
-		return "Will sending 100 short messages to a player instantly crash their game?";
+		return "Will sending 500 short messages to a player instantly crash their game?";
 	}
 
 	@Override
@@ -24,7 +24,7 @@ public class OverwhelmCrash extends Question {
 	public boolean OnCommand(Player player, String alias, String[] args) {
 		// TODO Auto-generated method stub
 		player.sendMessage(question());
-		for (int x = 0; x < 100; x++){
+		for (int x = 0; x < 500; x++){
 			player.sendMessage("Hello World Motherfucker!");
 		}
 		player.sendMessage(answer());

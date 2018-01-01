@@ -36,11 +36,11 @@ public class PluginConfigInfo extends Question {
 		player.sendMessage("Name of Root:");
 		player.sendMessage(" - " + config.getRoot().getName());
 		
-		player.sendMessage("Path of Root:");
-		player.sendMessage(" - " + config.getRoot().getCurrentPath());
+		//player.sendMessage("Path of Root:");
+		//player.sendMessage(" - " + config.getRoot().getCurrentPath());
 		
-		player.sendMessage("Keys of Root (Deep = true)");
-		player.sendMessage(" - " + config.getRoot().getKeys(true).toString());
+		//player.sendMessage("Keys of Root (Deep = true)");
+		//player.sendMessage(" - " + config.getRoot().getKeys(true).toString());
 		
 		player.sendMessage("[A]:" + this.answer());
 		return false;

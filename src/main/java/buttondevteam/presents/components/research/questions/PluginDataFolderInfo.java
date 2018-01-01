@@ -14,13 +14,13 @@ public class PluginDataFolderInfo extends Question {
 	@Override
 	public String question() {
 		// TODO Auto-generated method stub
-		return null;
+		return "What does the plugin data folder look like?";
 	}
 
 	@Override
 	public String answer() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.answer;
 	}
 
 	@Override
