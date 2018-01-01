@@ -30,7 +30,9 @@ public class PluginFilePath extends Question {
 		player.sendMessage("---Plugin's Data Folder Information---");
 		File dataFolder = this.getPlugin().getDataFolder();
 		
-		if (dataFolder.exists()){
+		if 		(dataFolder == null)	player.sendMessage("Data Folder is null");
+		else if (!dataFolder.exists())	player.sendMessage("Data Folder does not exist");
+		else{  
 			player.sendMessage("Absolute path: ");
 			player.sendMessage(dataFolder.getAbsolutePath());
 			
@@ -38,32 +40,34 @@ public class PluginFilePath extends Question {
 			try {
 				player.sendMessage(dataFolder.getCanonicalPath());
 			} catch (IOException e) {
-				player.sendMessage("I/O Exception!");
+				player.sendMessage("I/O Exception when getting Canonical Path!");
 				player.sendMessage(e.getMessage());
 				e.printStackTrace();
 				
+			} catch (SecurityException e){
+				player.sendMessage("Security exception when getting Canonical Path!");
+				player.sendMessage(e.getMessage());
+				e.printStackTrace();				
 			}
-		}else{ //!dataFolder.exists()
-			player.sendMessage("Data Folder does not exist");
 		}
 		
 		player.sendMessage("---Plugin's Config Information---");
 		FileConfiguration config = this.getPlugin().getConfig();
 		
 		player.sendMessage("Name:");
-		player.sendMessage(config.getName());
+		player.sendMessage(" - " + config.getName());
 				
 		player.sendMessage("Current Path:");
-		config.getCurrentPath();
+		player.sendMessage(" - " + config.getCurrentPath());
 		
 		player.sendMessage("Name of Root:");
-		player.sendMessage(config.getRoot().getName());
+		player.sendMessage(" - " + config.getRoot().getName());
 		
 		player.sendMessage("Path of Root:");
-		player.sendMessage(config.getRoot().getCurrentPath());
+		player.sendMessage(" - " + config.getRoot().getCurrentPath());
 		
 		player.sendMessage("Keys of Root (Deep = true)");
-		player.sendMessage(config.getRoot().getKeys(true).toString());
+		player.sendMessage(" - " + config.getRoot().getKeys(true).toString());
 		
 		player.sendMessage("[A]:" + this.answer());
 		return false;

@@ -11,3 +11,5 @@ commands:
     description: A set of commands designed to be used in spawn
   magic:
     description: A set of fun commands designed for cheaty stuff
+  research:
+    description: A set of commands designed for R and D
