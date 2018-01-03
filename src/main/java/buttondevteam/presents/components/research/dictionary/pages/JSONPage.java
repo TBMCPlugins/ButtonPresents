@@ -1,4 +1,4 @@
-package buttondevteam.presents.components.dictionary.pages;
+package buttondevteam.presents.components.research.dictionary.pages;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

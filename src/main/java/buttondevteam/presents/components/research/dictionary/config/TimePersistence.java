@@ -1,4 +1,4 @@
-package buttondevteam.presents.components.dictionary.config;
+package buttondevteam.presents.components.research.dictionary.config;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

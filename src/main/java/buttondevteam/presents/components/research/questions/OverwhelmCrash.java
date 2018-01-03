@@ -23,10 +23,10 @@ public class OverwhelmCrash extends Question {
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
 		// TODO Auto-generated method stub
-		player.sendMessage(question());
 		for (int x = 0; x < 500; x++){
 			player.sendMessage("Hello World Motherfucker!");
 		}
+		player.sendMessage(question());
 		player.sendMessage(answer());
 		return false;
 	}

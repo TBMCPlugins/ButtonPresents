@@ -1,4 +1,4 @@
-package buttondevteam.presents.components.dictionary.effects;
+package buttondevteam.presents.components.research.dictionary.effects;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

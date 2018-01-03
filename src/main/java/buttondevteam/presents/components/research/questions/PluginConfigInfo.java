@@ -27,22 +27,47 @@ public class PluginConfigInfo extends Question {
 		player.sendMessage("---Plugin's Config Information---");
 		FileConfiguration config = this.getPlugin().getConfig();
 		
-		player.sendMessage("Name:");
-		player.sendMessage(" - " + config.getName());
+		if (args.length >= 1){
+			switch(args[0].toLowerCase()){
+			case "name":
+				player.sendMessage("Name:");
+				player.sendMessage(" - " + config.getName());
+				break;
+			
+			case "path":
+				player.sendMessage("Current Path:");
+				player.sendMessage(" - " + config.getCurrentPath());
+				break;
+			
+			case "root_name":
+				player.sendMessage("Name of Root:");
+				player.sendMessage(" - " + config.getRoot().getName());
+				break;
 				
-		player.sendMessage("Current Path:");
-		player.sendMessage(" - " + config.getCurrentPath());
+			case "root_path":
+				player.sendMessage("Path of Root:");
+				player.sendMessage(" - " + config.getRoot().getCurrentPath());
+				break;
+				
+			case "root_key":
+			case "root_keys":
+				player.sendMessage("Keys of Root (Deep = true)");
+				player.sendMessage(" - " + config.getRoot().getKeys(true).toString());
+				break;
+			
+			case "answer":
+				player.sendMessage("[A]:" + this.answer());
+				break;
+			
+			default:
+				player.sendMessage("Usage: " + this.GetCommandPath() + "<subcommand>");
+				player.sendMessage("Subcommands = name, path, root_name, root_path, root_keys, answer");
+			}
+		}else{ //args.length <= 0
+			player.sendMessage("Usage: " + this.GetCommandPath() + "<subcommand>");
+			player.sendMessage("Subcommands = name, path, root_name, root_path, root_keys, answer");
+		}
 		
-		player.sendMessage("Name of Root:");
-		player.sendMessage(" - " + config.getRoot().getName());
-		
-		//player.sendMessage("Path of Root:");
-		//player.sendMessage(" - " + config.getRoot().getCurrentPath());
-		
-		//player.sendMessage("Keys of Root (Deep = true)");
-		//player.sendMessage(" - " + config.getRoot().getKeys(true).toString());
-		
-		player.sendMessage("[A]:" + this.answer());
 		return false;
 	}
 	

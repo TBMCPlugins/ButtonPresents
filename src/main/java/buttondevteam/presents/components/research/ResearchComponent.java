@@ -5,8 +5,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import buttondevteam.presents.architecture.Component;
 import buttondevteam.presents.components.research.questions.OverflowCrash;
 import buttondevteam.presents.components.research.questions.OverwhelmCrash;
-import buttondevteam.presents.components.research.questions.PluginDataFolderInfo;
 import buttondevteam.presents.components.research.questions.PluginConfigInfo;
+import buttondevteam.presents.components.research.questions.PluginDataFolderInfo;
 
 public class ResearchComponent extends Component {
 

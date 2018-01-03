@@ -1,4 +1,4 @@
-package buttondevteam.presents.components.dictionary.spawning;
+package buttondevteam.presents.components.research.dictionary.spawning;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

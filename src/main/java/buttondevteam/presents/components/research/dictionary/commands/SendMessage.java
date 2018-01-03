@@ -1,4 +1,4 @@
-package buttondevteam.presents.components.dictionary.commands;
+package buttondevteam.presents.components.research.dictionary.commands;
 
 import org.bukkit.command.CommandSender;
 

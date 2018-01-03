@@ -1,4 +1,4 @@
-package buttondevteam.presents.components.dictionary.pages;
+package buttondevteam.presents.components.research.dictionary.pages;
 
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
