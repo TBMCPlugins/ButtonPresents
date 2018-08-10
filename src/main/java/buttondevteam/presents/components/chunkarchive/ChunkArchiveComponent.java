@@ -4,8 +4,6 @@ import buttondevteam.lib.TBMCCoreAPI;
 import buttondevteam.presents.architecture.Component;
 import net.minecraft.server.v1_12_R1.ChunkRegionLoader;
 import net.minecraft.server.v1_12_R1.ExceptionWorldConflict;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.v1_12_R1.CraftChunk;
 import org.bukkit.craftbukkit.v1_12_R1.CraftServer;
@@ -17,17 +15,18 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 // @formatter:off
 public class ChunkArchiveComponent extends Component implements Listener {
-    private static final File dataFolder = new File("ChunkArchive");
+    private final File dataFolder = new File("plugins", "ChunkArchive");
     @Override
     public void register(JavaPlugin plugin) {
         try {
             this.registerListener(plugin, this);
             File testFolder = new File(dataFolder, "test");
             testFolder.mkdirs();
-            Logger logger = LogManager.getLogger("ChunkArchive");
+            Logger logger = plugin.getLogger();
             logger.info("Starting chunk save test...");
             ChunkRegionLoader testcrl = new ChunkRegionLoader(testFolder,
                     ((CraftServer) Bukkit.getServer()).getServer().dataConverterManager);
