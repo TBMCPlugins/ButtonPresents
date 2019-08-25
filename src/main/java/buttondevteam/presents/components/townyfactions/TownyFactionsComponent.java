@@ -63,13 +63,13 @@ public class TownyFactionsComponent extends Component<ButtonPresents> implements
 
 	@EventHandler
 	public void onTownyClaim(TownPreClaimEvent event) {
-		PS chunkCoord = PS.valueOf(getLocation(event.getTownBlock().getWorldCoord())).getChunkCoords(true);
+		PS coord = PS.valueOf(getLocation(event.getTownBlock().getWorldCoord()));
 		int distance = distance().get();
 		for (int i = -distance; i <= distance; i++) {
 			for (int j = -distance; j <= distance; j++) {
 				if (i * i + j * j <= distance * distance) {
-					PS chunk = PS.valueOf(chunkCoord.getChunkX() + i, chunkCoord.getChunkZ() + j)
-							.withWorld(chunkCoord.getWorld()); //TODO: Doesn't have the world for some reason
+					PS chunk = PS.valueOf(coord.getChunkX(true) + i, coord.getChunkZ(true) + j)
+							.withWorld(coord.getWorld());
 					if (!BoardColl.get().getFactionAt(chunk).isNone()) {
 						event.setCancelled(true);
 					}
