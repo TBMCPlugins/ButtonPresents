@@ -56,7 +56,7 @@ public class TownyFactionsComponent extends Component<ButtonPresents> implements
 			int distance = max * amount;
 			if (distance().get() >= distance) {
 				event.setCancelled(true);
-				event.getSender().sendMessage("§cYou are too close to a town!");
+				event.getSender().sendMessage("§cYou are too close to a town! " + distance + " chunks away, " + distance().get() + " is allowed.");
 			}
 		}
 	}
