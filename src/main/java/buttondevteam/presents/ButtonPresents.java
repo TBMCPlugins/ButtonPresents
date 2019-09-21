@@ -3,6 +3,7 @@ package buttondevteam.presents;
 import buttondevteam.lib.architecture.Component;
 import buttondevteam.presents.components.chunkarchive.ChunkArchiveComponent;
 import buttondevteam.presents.components.magic.MagicComponent;
+import buttondevteam.presents.components.portals.PortalLimitComponent;
 import buttondevteam.presents.components.research.ResearchComponent;
 import buttondevteam.presents.components.research.dictionary.DictionaryComponent;
 import buttondevteam.presents.components.spawn.SpawnComponent;
@@ -31,6 +32,7 @@ public class ButtonPresents extends JavaPlugin{
 			getLogger().warning("ChunkArchive compatibility error, not registering it.");
 		}
 		Component.registerComponent(this, new TownyFactionsComponent());
+		Component.registerComponent(this, new PortalLimitComponent());
 		
 		logger.info(pdfFile.getName() + " has fully registered (V." + pdfFile.getVersion()+ ").");
 	}
