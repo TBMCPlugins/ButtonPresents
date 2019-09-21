@@ -66,8 +66,8 @@ public class TownyFactionsComponent extends Component<ButtonPresents> implements
 	public void onTownyClaim(TownPreClaimEvent event) {
 		PS coord = PS.valueOf(getLocation(event.getTownBlock().getWorldCoord()));
 		int distance = distance().get();
-		for (int i = -distance; i <= distance; i++) {
-			for (int j = -distance; j <= distance; j++) {
+		for (int i = -distance + 1; i <= distance - 1; i++) {
+			for (int j = -distance + 1; j <= distance - 1; j++) {
 				if (i * i + j * j <= distance * distance) {
 					PS chunk = PS.valueOf(coord.getChunkX(true) + i, coord.getChunkZ(true) + j)
 							.withWorld(coord.getWorld());
