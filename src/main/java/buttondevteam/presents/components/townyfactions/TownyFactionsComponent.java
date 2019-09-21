@@ -34,7 +34,7 @@ public class TownyFactionsComponent extends Component<ButtonPresents> implements
 		return getConfig().getData("distance", 5);
 	}
 
-	@EventHandler
+	@EventHandler(ignoreCancelled = true)
 	public void onFactionsClaim(EventFactionsChunksChange event) throws NotRegisteredException {
 		if (event.getNewFaction().isNone())
 			return; //Allow unclaiming
@@ -42,9 +42,10 @@ public class TownyFactionsComponent extends Component<ButtonPresents> implements
 			int x = chunk.getChunkX() * 16;
 			int z = chunk.getChunkZ() * 16;
 			int size = Coord.getCellSize();
-			int amount = size / 16;
+			int amount = 16 / size;
 			World world = chunk.asBukkitWorld();
 			int max = 0;
+			if (amount < 1) amount = 1; //For plot sizes > 16
 			for (int i = 0; i < amount; i++) {
 				for (int j = 0; j < amount; j++) {
 					Coord coord = Coord.parseCoord(new Location(world, x + i * size, 64, z + j * size));
@@ -53,15 +54,15 @@ public class TownyFactionsComponent extends Component<ButtonPresents> implements
 					if (dist > max) max = dist;
 				}
 			}
-			int distance = max * amount;
+			int distance = max / amount;
 			if (distance().get() >= distance) {
 				event.setCancelled(true);
-				event.getSender().sendMessage("§cYou are too close to a town! " + distance + " chunks away, " + distance().get() + " is allowed.");
+				event.getSender().sendMessage("§cYou are too close to a town! " + (distance - 1) + " chunks away, " + distance().get() + " is allowed.");
 			}
 		}
 	}
 
-	@EventHandler
+	@EventHandler(ignoreCancelled = true)
 	public void onTownyClaim(TownPreClaimEvent event) {
 		PS coord = PS.valueOf(getLocation(event.getTownBlock().getWorldCoord()));
 		int distance = distance().get();
