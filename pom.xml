@@ -83,12 +83,12 @@
 		<dependency>
 			<groupId>com.massivecraft</groupId>
 			<artifactId>Factions</artifactId>
-			<version>2.14.0</version>
+			<version>3.2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>com.massivecraft</groupId>
 			<artifactId>MassiveCore</artifactId>
-			<version>2.14.0</version>
+			<version>3.2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.TBMCPlugins.ButtonCore</groupId>
