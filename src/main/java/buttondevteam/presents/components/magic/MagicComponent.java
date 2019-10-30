@@ -1,23 +1,25 @@
 package buttondevteam.presents.components.magic;
 
+import buttondevteam.lib.architecture.Component;
+import buttondevteam.presents.ButtonPresents;
+import buttondevteam.presents.components.magic.tricks.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import buttondevteam.presents.architecture.Component;
-import buttondevteam.presents.components.magic.tricks.AliArrowListener;
-import buttondevteam.presents.components.magic.tricks.BoomBowDeathListener;
-import buttondevteam.presents.components.magic.tricks.BoomBowListener;
-import buttondevteam.presents.components.magic.tricks.CannonBowListener;
-import buttondevteam.presents.components.magic.tricks.CannonBowSettings;
 
-
-public class MagicComponent extends Component{
+public class MagicComponent extends Component<ButtonPresents> {
 	
 	@Override
-	public void register(JavaPlugin plugin) {
-		registerCommand(plugin, new CannonBowSettings());
-		registerListener(plugin, new AliArrowListener(plugin));
-		registerListener(plugin, new BoomBowDeathListener());
-		registerListener(plugin, new BoomBowListener(plugin));
-		registerListener(plugin, new CannonBowListener(plugin));
+	public void enable() {
+		JavaPlugin plugin = getPlugin();
+		registerCommand(new CannonBowSettings());
+		registerListener(new AliArrowListener(plugin));
+		registerListener(new BoomBowDeathListener());
+		registerListener(new BoomBowListener(plugin));
+		registerListener(new CannonBowListener(plugin));
+	}
+
+	@Override
+	protected void disable() {
+
 	}
 }

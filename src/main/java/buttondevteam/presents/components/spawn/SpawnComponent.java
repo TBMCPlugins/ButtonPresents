@@ -1,15 +1,18 @@
 package buttondevteam.presents.components.spawn;
 
-import org.bukkit.plugin.java.JavaPlugin;
+import buttondevteam.lib.architecture.Component;
+import buttondevteam.presents.ButtonPresents;
 
-import buttondevteam.presents.architecture.Component;
-
-public class SpawnComponent extends Component{
+public class SpawnComponent extends Component<ButtonPresents> {
 	
 	@Override
-	public void register(JavaPlugin plugin) {
-		this.registerCommand(plugin, new ChooseColor());
-		
+	public void enable() {
+		this.registerCommand(new ChooseColor());
+	}
+
+	@Override
+	protected void disable() {
+
 	}
 
 }

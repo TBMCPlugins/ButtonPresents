@@ -1,16 +1,20 @@
 package buttondevteam.presents.components.dungeon;
 
-import org.bukkit.plugin.java.JavaPlugin;
+import buttondevteam.lib.architecture.Component;
+import buttondevteam.presents.ButtonPresents;
 
-import buttondevteam.presents.architecture.Component;
-
-public class DungeonComponent extends Component{
+public class DungeonComponent extends Component<ButtonPresents> {
 
 	@Override
-	public void register(JavaPlugin plugin) {
-		this.registerCommand(plugin, new DungeonCreate());
-		this.registerCommand(plugin, new DungeonDelete());
-		
+	public void enable() {
+		this.registerCommand(new DungeonCreate());
+		this.registerCommand(new DungeonDelete());
+
 	}
-	
+
+	@Override
+	protected void disable() {
+
+	}
+
 }

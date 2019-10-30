@@ -53,6 +53,10 @@
 			<id>jitpack.io</id>
 			<url>https://jitpack.io</url>
 		</repository>
+		<repository>
+			<id>repo</id>
+			<url>file://${basedir}/repo</url>
+		</repository>
 	</repositories>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
@@ -74,6 +78,21 @@
 		<dependency>
 			<groupId>com.github.tbmcplugins</groupId>
 			<artifactId>ButtonWebsiteModule</artifactId>
+			<version>master-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.massivecraft</groupId>
+			<artifactId>Factions</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.massivecraft</groupId>
+			<artifactId>MassiveCore</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.TBMCPlugins.ButtonCore</groupId>
+			<artifactId>Towny</artifactId>
 			<version>master-SNAPSHOT</version>
 		</dependency>
 		<dependency>
