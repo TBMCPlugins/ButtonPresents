@@ -2,6 +2,7 @@ package buttondevteam.presents.components.chunkarchive;
 
 import buttondevteam.lib.TBMCCoreAPI;
 import buttondevteam.lib.architecture.Component;
+import buttondevteam.lib.architecture.ComponentMetadata;
 import buttondevteam.presents.ButtonPresents;
 import net.minecraft.server.v1_12_R1.ChunkRegionLoader;
 import net.minecraft.server.v1_12_R1.ExceptionWorldConflict;
@@ -18,6 +19,7 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 // @formatter:off
+@ComponentMetadata(enabledByDefault = false)
 public class ChunkArchiveComponent extends Component<ButtonPresents> implements Listener {
     private final File dataFolder = new File("plugins", "ChunkArchive");
     @Override

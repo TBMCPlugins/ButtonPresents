@@ -1,16 +1,16 @@
 package buttondevteam.presents.components.research.dictionary.spawning;
 
+import buttondevteam.lib.chat.Command2;
+import buttondevteam.lib.chat.CommandClass;
+import buttondevteam.presents.architecture.commands.UniversalCommand;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 
-import buttondevteam.lib.chat.CommandClass;
-import buttondevteam.presents.architecture.commands.PlayerCommand;
+@CommandClass(path = "dictionary particle", modOnly = true)
+public class SpawnParticle extends UniversalCommand {
 
-@CommandClass(path = "dictionary particle", modOnly=true)
-public class SpawnParticle extends PlayerCommand {
-
-	@Override
-	public boolean OnCommand(Player player, String alias, String[] args) {
+	@Command2.Subcommand
+	public boolean def(Player player) {
 		player.getWorld().spawnParticle(Particle.CLOUD, player.getLocation(), 10);
 		return true;
 	}

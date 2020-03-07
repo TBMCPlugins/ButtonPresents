@@ -1,14 +1,14 @@
 package buttondevteam.presents.components.research.questions;
 
+import buttondevteam.lib.chat.Command2;
+import buttondevteam.lib.chat.CommandClass;
+import buttondevteam.presents.components.research.Question;
+import org.bukkit.entity.Player;
+
 import java.io.File;
 import java.io.IOException;
 
-import org.bukkit.entity.Player;
-
-import buttondevteam.lib.chat.CommandClass;
-import buttondevteam.presents.components.research.Question;
-
-@CommandClass(path="research info datafolder")
+@CommandClass(path = "research info datafolder", modOnly = true)
 public class PluginDataFolderInfo extends Question {
 
 	@Override
@@ -23,19 +23,19 @@ public class PluginDataFolderInfo extends Question {
 		return this.answer;
 	}
 
-	@Override
-	public boolean OnCommand(Player player, String alias, String[] args) {
+	@Command2.Subcommand
+	public boolean def(Player player) {
 		player.sendMessage("[Q]:" + this.question());
-		
+
 		player.sendMessage("---Plugin's Data Folder Information---");
 		File dataFolder = this.getPlugin().getDataFolder();
-		
-		if 		(dataFolder == null)	player.sendMessage("Data Folder is null");
-		else if (!dataFolder.exists())	player.sendMessage("Data Folder does not exist");
-		else{  
+
+		if (dataFolder == null) player.sendMessage("Data Folder is null");
+		else if (!dataFolder.exists()) player.sendMessage("Data Folder does not exist");
+		else {
 			player.sendMessage("Absolute path: ");
 			player.sendMessage(dataFolder.getAbsolutePath());
-			
+
 			player.sendMessage("Canonical Path:");
 			try {
 				player.sendMessage(dataFolder.getCanonicalPath());

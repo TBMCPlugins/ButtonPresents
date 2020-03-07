@@ -1,11 +1,11 @@
 package buttondevteam.presents.components.research.questions;
 
-import org.bukkit.entity.Player;
-
+import buttondevteam.lib.chat.Command2;
 import buttondevteam.lib.chat.CommandClass;
 import buttondevteam.presents.components.research.Question;
+import org.bukkit.entity.Player;
 
-@CommandClass(path="research crash overwhelm")
+@CommandClass(path = "research crash overwhelm", modOnly = true)
 public class OverwhelmCrash extends Question {
 
 	@Override
@@ -20,10 +20,10 @@ public class OverwhelmCrash extends Question {
 		return "No.";
 	}
 
-	@Override
-	public boolean OnCommand(Player player, String alias, String[] args) {
+	@Command2.Subcommand
+	public boolean def(Player player) {
 		// TODO Auto-generated method stub
-		for (int x = 0; x < 500; x++){
+		for (int x = 0; x < 500; x++) {
 			player.sendMessage("Hello World Motherfucker!");
 		}
 		player.sendMessage(question());

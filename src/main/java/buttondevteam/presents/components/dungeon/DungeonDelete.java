@@ -1,32 +1,29 @@
 package buttondevteam.presents.components.dungeon;
 
+import buttondevteam.lib.chat.Command2;
+import buttondevteam.lib.chat.CommandClass;
+import buttondevteam.presents.architecture.commands.UniversalCommand;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
-import buttondevteam.lib.chat.CommandClass;
-import buttondevteam.presents.architecture.commands.ModCommand;
+@CommandClass(path = "dungeon delete")
+public class DungeonDelete extends UniversalCommand {
 
-@CommandClass(path="dungeon delete")
-public class DungeonDelete extends ModCommand{
+	@Command2.Subcommand
+	public boolean def(Player player, String dungeonName) {
 
-	@Override
-	public boolean OnCommand(Player player, String alias, String[] args) {
-		
-		if (args.length < 1) return false;
-		
-		String dungeonName = args[0];
 		FileConfiguration config = this.getPlugin().getConfig();
-		
-		if(!config.contains("dungeon." + dungeonName)){
+
+		if (!config.contains("dungeon." + dungeonName)) {
 			player.sendMessage("This dungeon does not exist!");
 			String output = "Valid dungeons are:";
-			for(String key : config.getConfigurationSection("dungeon").getKeys(false)){
+			for (String key : config.getConfigurationSection("dungeon").getKeys(false)) {
 				output += key;
 				output += ", ";
 			}
 			player.sendMessage(output);
-		}else{
-			for(String key : config.getConfigurationSection("dungeon." + dungeonName).getKeys(true)){
+		} else {
+			for (String key : config.getConfigurationSection("dungeon." + dungeonName).getKeys(true)) {
 				config.set("dungeon." + dungeonName + "." + key, null);
 			}
 			player.sendMessage("Dungeon " + dungeonName + " deleted.");
@@ -35,5 +32,4 @@ public class DungeonDelete extends ModCommand{
 		
 		return true;
 	}
-
 }

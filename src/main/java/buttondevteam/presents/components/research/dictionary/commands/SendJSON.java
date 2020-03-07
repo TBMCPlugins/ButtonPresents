@@ -1,29 +1,29 @@
 package buttondevteam.presents.components.research.dictionary.commands;
 
 
-import org.bukkit.entity.Player;
-
+import buttondevteam.lib.chat.Command2;
+import buttondevteam.lib.chat.CommandClass;
+import buttondevteam.presents.architecture.commands.UniversalCommand;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.bukkit.entity.Player;
 
-import buttondevteam.lib.chat.CommandClass;
-import buttondevteam.presents.architecture.commands.ModCommand;
+@CommandClass(modOnly = true, path = "dictionary json")
+public class SendJSON extends UniversalCommand {
 
-@CommandClass(modOnly = true, path="dictionary json")
-public class SendJSON extends ModCommand{
+	@Command2.Subcommand
+	public boolean def(Player player) {
+		GsonBuilder builder = new GsonBuilder();
+		Gson gson = builder.create();
 
-	@Override
-	public boolean OnCommand(Player player, String alias, String[] args) {
-    	GsonBuilder builder = new GsonBuilder();
-        Gson gson = builder.create();
-        
 		player.sendMessage(gson.toJson(new output()));
 		return true;
 	}
-    class output{
+
+	class output {
 		String ali = "pls";
-    	String iie = "whaddap";
-    	String norbipeti = "¯\\_(ツ)_/¯";
-    }
+		String iie = "whaddap";
+		String norbipeti = "¯\\_(ツ)_/¯";
+	}
 
 }

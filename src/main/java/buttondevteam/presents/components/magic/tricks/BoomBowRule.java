@@ -1,22 +1,27 @@
 package buttondevteam.presents.components.magic.tricks;
 
+import buttondevteam.lib.chat.Command2;
+import buttondevteam.lib.chat.CommandClass;
+import buttondevteam.presents.architecture.commands.UniversalCommand;
 import org.bukkit.entity.Player;
 
-import buttondevteam.presents.architecture.commands.ModCommand;
-
 //HEHEHHEHEH EAASSSTER EGGS
-public class BoomBowRule extends ModCommand{
+@CommandClass(helpText = {
+		"Rule settings: boomDecay, healthReduction, endCrystal, localized"
+})
+public class BoomBowRule extends UniversalCommand {
 	public static boolean boomDecay;
 	public static boolean healthReduction;
 	public static boolean endCrystal;
-	public static boolean localized;;
-	@Override
-	public boolean OnCommand(Player player, String label, String[] args) {
-		if (player.getName().equals("alisolarflare") == false){
+	public static boolean localized;
+
+	@Command2.Subcommand
+	public boolean def(Player player, @Command2.OptionalArg String name, @Command2.OptionalArg Boolean value) {
+		if (!player.getName().equals("alisolarflare")) {
 			player.sendMessage("You must be alisolarflare to use this command");
 			return false;
 		}
-		if (args.length < 2){
+		if (name == null || value == null) {
 			player.sendMessage("Rules:");
 			player.sendMessage("boomDecay" + boomDecay);
 			player.sendMessage("healthReduction" + healthReduction);
@@ -24,38 +29,31 @@ public class BoomBowRule extends ModCommand{
 			player.sendMessage("localized" + localized);
 			return false;
 		}
-		if(!(args[1].startsWith("t")|| args[1].startsWith("f"))){
+		/*if(!(args[1].startsWith("t")|| args[1].startsWith("f"))){
 			return false;
 		}
 		boolean gameRule = false;
 		if(args[1].startsWith("t") || args[1].startsWith("T")){
 			gameRule = true;
+		}*/
+		switch (name) {
+			case "boomDecay":
+				boomDecay = value;
+				break;
+			case "healthReduction":
+				healthReduction = value;
+				break;
+			case "endCrystal":
+				endCrystal = value;
+				break;
+			case "localized":
+				localized = value;
+				break;
+			default:
+				player.sendMessage("Error: " + name + " not defined as a rule");
+				return false;
 		}
-		switch(args[0]){
-		case "boomDecay":
-			boomDecay = gameRule;
-			break;
-		case "healthReduction":
-			healthReduction = gameRule;
-			break;
-		case "endCrystal":
-			endCrystal = gameRule;
-			break;
-		case "localized":
-			localized = gameRule;
-			break;
-		default:
-			player.sendMessage("Error: "+args[0]+" not defined as a rule");
-			return false;
-		}
-		
+
 		return true;
-	}
-	@Override
-	public String[] GetHelpText(String alias) {
-		return new String[]{
-				"Usage: /boomBowRule [rulename] [true/false]",
-				"Rule settings: boomDecay, healthReduction, endCrystal, localized"
-		};
 	}
 }
