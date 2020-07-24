@@ -3,13 +3,13 @@ package buttondevteam.presents.components.townyfactions;
 import buttondevteam.lib.architecture.Component;
 import buttondevteam.lib.architecture.ConfigData;
 import buttondevteam.presents.ButtonPresents;
-import com.massivecraft.factions.entity.BoardColl;
-import com.massivecraft.factions.event.EventFactionsChunksChange;
-import com.massivecraft.massivecore.ps.PS;
+import com.massivecraft.factions.Board;
+import com.massivecraft.factions.FLocation;
+import com.massivecraft.factions.event.LandClaimEvent;
+import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.event.TownPreClaimEvent;
 import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.Coord;
-import com.palmergames.bukkit.towny.object.TownyUniverse;
 import com.palmergames.bukkit.towny.object.WorldCoord;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -35,43 +35,42 @@ public class TownyFactionsComponent extends Component<ButtonPresents> implements
 	}
 
 	@EventHandler(ignoreCancelled = true)
-	public void onFactionsClaim(EventFactionsChunksChange event) throws NotRegisteredException {
-		if (event.getNewFaction().isNone())
+	public void onFactionsClaim(LandClaimEvent event) throws NotRegisteredException {
+		if (event.getFaction().isWilderness())
 			return; //Allow unclaiming
-		for (PS chunk : event.getChunks()) {
-			int x = chunk.getChunkX() * 16;
-			int z = chunk.getChunkZ() * 16;
-			int size = Coord.getCellSize();
-			int amount = 16 / size;
-			World world = chunk.asBukkitWorld();
-			int max = 0;
-			if (amount < 1) amount = 1; //For plot sizes > 16
-			for (int i = 0; i < amount; i++) {
-				for (int j = 0; j < amount; j++) {
-					Coord coord = Coord.parseCoord(new Location(world, x + i * size, 64, z + j * size));
-					int dist = TownyUniverse.getDataSource().getWorld(world.getName())
-							.getMinDistanceFromOtherTownsPlots(coord);
-					if (dist > max) max = dist;
-				}
+		FLocation chunk = event.getLocation();
+		long x = chunk.getX() << 4;
+		long z = chunk.getZ() << 4;
+		int size = Coord.getCellSize();
+		int amount = 16 / size;
+		World world = chunk.getWorld();
+		int max = 0;
+		if (amount < 1) amount = 1; //For plot sizes > 16
+		for (int i = 0; i < amount; i++) {
+			for (int j = 0; j < amount; j++) {
+				Coord coord = Coord.parseCoord(new Location(world, x + i * size, 64, z + j * size));
+				int dist = TownyAPI.getInstance().getDataSource().getWorld(world.getName())
+						.getMinDistanceFromOtherTownsPlots(coord);
+				if (dist > max) max = dist;
 			}
-			int distance = max / amount;
-			if (distance().get() >= distance) {
-				event.setCancelled(true);
-				event.getSender().sendMessage("§cYou are too close to a town! " + (distance - 1) + " chunks away, " + distance().get() + " is allowed.");
-			}
+		}
+		int distance = max / amount;
+		if (distance().get() >= distance) {
+			event.setCancelled(true);
+			event.getfPlayer().sendMessage("§cYou are too close to a town! " + (distance - 1) + " chunks away, " + distance().get() + " is allowed.");
 		}
 	}
 
 	@EventHandler(ignoreCancelled = true)
 	public void onTownyClaim(TownPreClaimEvent event) {
-		PS coord = PS.valueOf(getLocation(event.getTownBlock().getWorldCoord()));
+		FLocation coord = new FLocation(getLocation(event.getTownBlock().getWorldCoord()));
 		int distance = distance().get();
 		for (int i = -distance + 1; i <= distance - 1; i++) {
 			for (int j = -distance + 1; j <= distance - 1; j++) {
 				if (i * i + j * j <= distance * distance) {
-					PS chunk = PS.valueOf(coord.getChunkX(true) + i, coord.getChunkZ(true) + j)
-							.withWorld(coord.getWorld());
-					if (!BoardColl.get().getFactionAt(chunk).isNone()) {
+					FLocation chunk = new FLocation(coord.getWorldName(), (int) coord.getX() + i, (int) coord.getZ() + j);
+					if (!Board.getInstance().getFactionAt(chunk).isWilderness()) {
+						event.setCancelMessage("§cYou are too close to a faction! " + (distance - 1) + " chunks away, " + distance().get() + " is allowed.");
 						event.setCancelled(true);
 					}
 				}

@@ -54,8 +54,8 @@
 			<url>https://jitpack.io</url>
 		</repository>
 		<repository>
-			<id>repo</id>
-			<url>file://${basedir}/repo</url>
+			<id>Factions</id>
+			<url>http://ci.ender.zone/plugin/repository/everything/</url>
 		</repository>
 	</repositories>
 	<dependencies>
@@ -83,17 +83,12 @@
 		<dependency>
 			<groupId>com.massivecraft</groupId>
 			<artifactId>Factions</artifactId>
-			<version>3.2.2</version>
-		</dependency>
-		<dependency>
-			<groupId>com.massivecraft</groupId>
-			<artifactId>MassiveCore</artifactId>
-			<version>3.2.2</version>
+			<version>1.6.9.5-U0.5.16</version>
 		</dependency>
 		<dependency>
 			<groupId>com.palmergames.bukkit.towny</groupId>
 			<artifactId>Towny</artifactId>
-			<version>0.95.2.0</version>
+			<version>0.96.2.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
