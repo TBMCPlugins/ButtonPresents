@@ -9,7 +9,7 @@ before_install: | # Wget BuildTools and run if cached folder not found
   fi
 language: java
 jdk:
-  - openjdk11
+  - openjdk8
 sudo: required
 deploy:
   # deploy develop to the staging environment
