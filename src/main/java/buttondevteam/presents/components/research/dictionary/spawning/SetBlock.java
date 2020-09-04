@@ -14,7 +14,7 @@ public class SetBlock extends UniversalCommand {
 	public boolean def(Player player) {
 		Block blockAtPlayer = player.getWorld().getBlockAt(player.getLocation());
 
-		blockAtPlayer.setType(Material.CAKE_BLOCK);
+		blockAtPlayer.setType(Material.CAKE);
 
 		return true;
 	}
