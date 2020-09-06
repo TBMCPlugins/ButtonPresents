@@ -1,5 +1,6 @@
 package buttondevteam.presents.components.research.dictionary.effects;
 
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -11,7 +12,7 @@ public class Bedsplode implements Listener {
 		Player player = event.getPlayer();
 		player.sendMessage("[ButtonPresents] Nighty night " + player.getName().toLowerCase());
 		if (!player.getName().toLowerCase().equalsIgnoreCase("alisolarflare")) return;
-		
+		if (event.getBed().getType() == Material.BLUE_BED) return;
 		player.getWorld().createExplosion(
 				player.getLocation().getBlockX(),
 				player.getLocation().getBlockY(),
