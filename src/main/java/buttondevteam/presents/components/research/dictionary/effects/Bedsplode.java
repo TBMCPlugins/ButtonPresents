@@ -13,6 +13,7 @@ public class Bedsplode implements Listener {
 		player.sendMessage("[ButtonPresents] Nighty night " + player.getName().toLowerCase());
 		if (!player.getName().toLowerCase().equalsIgnoreCase("alisolarflare")) return;
 		if (event.getBed().getType() == Material.BLUE_BED) return;
+
 		player.getWorld().createExplosion(
 				player.getLocation().getBlockX(),
 				player.getLocation().getBlockY(),
