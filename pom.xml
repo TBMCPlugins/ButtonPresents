@@ -32,7 +32,7 @@
         	<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.0</version>
+                <version>3.8.1</version>
                 <configuration>
 					<source>1.8</source>
 					<target>1.8</target>
@@ -47,7 +47,7 @@
 		</repository>
 		<repository> <!-- This repo fixes issues with transitive dependencies -->
 			<id>jcenter</id>
-			<url>http://jcenter.bintray.com</url>
+			<url>https://jcenter.bintray.com</url>
 		</repository>
 		<repository>
 			<id>jitpack.io</id>
@@ -55,7 +55,11 @@
 		</repository>
 		<repository>
 			<id>Factions</id>
-			<url>http://ci.ender.zone/plugin/repository/everything/</url>
+			<url>https://ci.ender.zone/plugin/repository/everything/</url>
+		</repository>
+		<repository>
+			<id>TownyAdvanced</id>
+			<url>https://github.com/TownyAdvanced/Towny/</url>
 		</repository>
 	</repositories>
 	<dependencies>
@@ -67,8 +71,9 @@
 		</dependency>
 		<dependency>
 			<groupId>org.spigotmc</groupId>
-			<artifactId>spigot</artifactId>
-			<version>1.12.2-R0.1-SNAPSHOT</version>
+			<artifactId>spigot-api</artifactId>
+			<version>1.16.2-R0.1-SNAPSHOT</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.github.TBMCPlugins.ChromaCore</groupId>
@@ -86,8 +91,9 @@
 			<version>1.6.9.5-U0.5.16</version>
 		</dependency>
 		<dependency>
-			<groupId>com.palmergames.bukkit.towny</groupId>
+			<groupId>com.github.TownyAdvanced</groupId>
 			<artifactId>Towny</artifactId>
+			<!-- <version>8d3b6b6</version> ButtonCore repo -->
 			<version>0.96.2.0</version>
 			<scope>provided</scope>
 		</dependency>

@@ -1,7 +1,6 @@
 package buttondevteam.presents;
 
 import buttondevteam.lib.architecture.Component;
-import buttondevteam.presents.components.chunkarchive.ChunkArchiveComponent;
 import buttondevteam.presents.components.magic.MagicComponent;
 import buttondevteam.presents.components.portals.PortalLimitComponent;
 import buttondevteam.presents.components.research.ResearchComponent;
@@ -14,7 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.logging.Logger;
 
 public class ButtonPresents extends JavaPlugin{
-
+	//Hello Norbs
 	public void onEnable(){
 		PluginDescriptionFile pdfFile = getDescription();
 		
@@ -26,11 +25,6 @@ public class ButtonPresents extends JavaPlugin{
 		Component.registerComponent(this, new SpawnComponent());
 		Component.registerComponent(this, new MagicComponent());
 		Component.registerComponent(this, new ResearchComponent());
-		try {
-			Component.registerComponent(this, new ChunkArchiveComponent());
-		} catch (NoClassDefFoundError e) {
-			getLogger().warning("ChunkArchive compatibility error, not registering it.");
-		}
 		Component.registerComponent(this, new TownyFactionsComponent());
 		Component.registerComponent(this, new PortalLimitComponent());
 		
