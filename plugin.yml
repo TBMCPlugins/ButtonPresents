@@ -1,6 +1,7 @@
 main: buttondevteam.presents.ButtonPresents
 name: ButtonPresents
-version: 0.0.1
+version: 0.0.2
+api-version: 1.13
 
 commands:
   dictionary:
