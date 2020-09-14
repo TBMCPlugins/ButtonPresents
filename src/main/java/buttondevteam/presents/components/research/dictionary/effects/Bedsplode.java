@@ -10,7 +10,9 @@ public class Bedsplode implements Listener {
 	@EventHandler
 	public void onSleep(PlayerBedEnterEvent event){
 		Player player = event.getPlayer();
-		player.sendMessage("[ButtonPresents] Nighty night " + player.getName().toLowerCase());
+		if(event.getBedEnterResult() == PlayerBedEnterEvent.BedEnterResult.OK) {
+			player.sendMessage("[ButtonPresents] Nighty night " + player.getName().toLowerCase());
+		}
 		if (!player.getName().toLowerCase().equalsIgnoreCase("alisolarflare")) return;
 		if (event.getBed().getType() == Material.BLUE_BED) return;
 
