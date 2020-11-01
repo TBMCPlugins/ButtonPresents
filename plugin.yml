@@ -16,4 +16,4 @@ commands:
     description: A set of commands designed for R and D
 
 softdepend: [Factions]
-depend: [ChromaCore]
+depend: [Chroma-Core]
